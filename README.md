@@ -1,0 +1,1 @@
+This code contains customized ui for card management system

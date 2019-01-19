@@ -1,0 +1,666 @@
+
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Create Customer</h5>
+        </div>
+        <div class="card-body">
+          <form form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+            Value {{addForm.value | json }}
+
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Personal Details 
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+
+                    <div class="row">
+                      <div class="col-md-4 pr-1">
+                        <div class="form-group">
+                         <label for="name">Name:</label>
+                        <input  placeholder="Name" name="name" class="form-control" id="name" formControlName="name">
+                        </div>
+                      </div>
+                      <div class="col-md-4 px-1">
+                        <div class="form-group">
+                          <label for="mid_name">Mid Name:</label>
+                          <input  placeholder="Mid name" name="mid_name" class="form-control" id="mid_name" formControName="mid_name">
+                        </div>
+                      </div>
+                      <div class="col-md-4 pl-1">
+                        <div class="form-group">
+                          <label for="surname">Surname:</label>
+                          <input formControlName="surname" placeholder="Last name" name="surname" class="form-control" id="surname">
+                        </div>
+                      </div>
+                  </div>
+
+                   <div class="row">
+                      <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                         <label for="fatherName">Father Name:</label>
+                        <input formControlName="fatherName" placeholder="Father Name" name="fatherName" class="form-control" id="fatherName">
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6 pl-1">
+                        <div class="form-group">
+                          <label for="motherMaidenName">Mother's Maiden Name:</label>
+                          <input formControlName="motherMaidenName" placeholder="Mother's Maiden name" name="motherMaidenName" class="form-control" id="motherMaidenName">
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                         <label for="gender">Gender:</label>
+                         <div class="form-check form-check-radio">
+                            <label class="form-check-label">
+                                <input formControlName="gender" class="form-check-input" type="radio" name="gender" id="gener" value="male" checked>
+                                <span class="form-check-sign"></span>
+                                Male
+                            </label>
+                            <label class="form-check-label">
+                                <input formControlName="gender" class="form-check-input" type="radio" name="gender" id="gender" value="female" checked>
+                                <span class="form-check-sign"></span>
+                                Female
+                            </label>
+                        </div>
+                        </div>
+                      </div>
+                      
+                  </div>
+
+                   
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Passport Details
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-4 pr-1">
+                        <div class="form-group">
+                         <label for="nationality">Nationality:</label>
+                        <input formControlName="nationality" placeholder="Nationality" name="nationality" class="form-control" id="nationality">
+                        </div>
+                      </div>
+                      <div class="col-md-4 px-1">
+                        <div class="form-group">
+                          <label for="issuedBy">Issued By:</label>
+                          <input formControlName="issuedBy" placeholder="Issued By" name="issuedBy" class="form-control" id="issuedBy">
+                        </div>
+                      </div>
+                      <div class="col-md-4 pl-1">
+                        <div class="form-group">
+                          <label for="passportNo">Passport No:</label>
+                          <input formControlName="passportNo" placeholder="Passport No" name="passportNo" class="form-control" id="passportNo">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4 pr-1">
+                        <div class="form-group">
+                         <label for="passportIssuedBy">Passport Issued By:</label>
+                        <input formControlName="passportIssuedBy" placeholder="Passport Issued By" name="passportIssuedBy" class="form-control" id="passportIssuedBy">
+                        </div>
+                      </div>
+                      <div class="col-md-4 px-1">
+                        <div class="form-group">
+                          <label for="dateOfIssue">Date Of Issue:</label>
+                          <input formControlName="dateOfIssue" placeholder="Date Of Issue" name="dateOfIssue" class="form-control" id="dateOfIssue">
+                        </div>
+                      </div>
+                      <div class="col-md-4 pl-1">
+                        <div class="form-group">
+                          <label for="dateOfExpiry">Date Of Expiry:</label>
+                          <input formControlName="dateOfExpiry" placeholder="Date Of Issue" name="dateOfExpiry" class="form-control" id="dateOfExpiry">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4 pr-1">
+                        <div class="form-group">
+                         <label for="controlPeriod">Control Period:</label>
+                        <input formControlName="controlPeriod" placeholder="Control Period" name="controlPeriod" class="form-control" id="controlPeriod">
+                        </div>
+                      </div>
+                      <div class="col-md-4 px-1">
+                        <div class="form-group">
+                          <label for="emergencyContactName">Emergency Contact Name:</label>
+                          <input formControlName="emergencyContactName" placeholder="Emergency Contact Name" name="emergencyContactName" class="form-control" id="emergencyContactName">
+                        </div>
+                      </div>
+                      <div class="col-md-4 pl-1">
+                        <div class="form-group">
+                          <label for="resCountryCode">Resident Country Code:</label>
+                          <input formControlName="resCountryCode" placeholder="Resident Country Code" name="resCountryCode" class="form-control" id="resCountryCode">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4 pr-1">
+                        <div class="form-group">
+                         <label for="birthCountry">Birth Country:</label>
+                        <input formControlName="birthCountry" placeholder="Birth Country" name="birthCountry" class="form-control" id="birthCountry">
+                        </div>
+                      </div>
+                      <div class="col-md-4 px-1">
+                        <div class="form-group">
+                          <label for="birthCity">Birth City:</label>
+                          <input formControlName="birthCity" placeholder="Birth City" name="birthCity" class="form-control" id="birthCity">
+                        </div>
+                      </div>
+                      <div class="col-md-4 pl-1">
+                        <div class="form-group">
+                          <label for="birthPlace">Birth Place:</label>
+                          <input formControlName="birthPlace" placeholder="Birth Place" name="birthPlace" class="form-control" id="birthPlace">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Contact Details
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                   <div class="row">
+                    <div class="col-md-4 pr-1">
+                      <div class="form-group">
+                       <label for="email">Email:</label>
+                      <input formControlName="email" placeholder="Email" name="email" class="form-control" id="email">
+                      </div>
+                    </div>
+                    <div class="col-md-4 px-1">
+                      <div class="form-group">
+                        <label for="commonLang">Common Languages:</label>
+                        <input formControlName="commonLang" placeholder="Common Languages" name="commonLang" class="form-control" id="commonLang">
+                      </div>
+                    </div>
+                    <div class="col-md-4 pl-1">
+                      <div class="form-group">
+                        <label for="sendEmail">Send Email:</label>
+                        <div class="form-check form-check-radio">
+                            <label class="form-check-label">
+                                <input formControlName="sendEmail" class="form-check-input" type="radio" name="sendEmail" id="sendEmail" value="Yes" checked>
+                                <span class="form-check-sign"></span>
+                                Yes
+                            </label>
+                            <label class="form-check-label">
+                                <input formControlName="sendEmail" class="form-check-input" type="radio" name="sendEmail" id="sendEmail" value="No" checked>
+                                <span class="form-check-sign"></span>
+                                No
+                            </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                 <label for="mobileNo">Mobile No:</label>
+                <input formControlName="mobileNo" placeholder="Mobile No" name="mobileNo" class="form-control" id="mobileNo">
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label for="home">Home:</label>
+                  <input formControlName="home" placeholder="Home" name="home" class="form-control" id="home">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label for="work">Work:</label>
+                  <input formControlName="work" placeholder="Work" name="work" class="form-control" id="work">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                 <label for="name">Workplace:</label>
+                <input formControlName="workplace" placeholder="Workplace" name="workplace" class="form-control" id="workplace">
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label for="mid_name">Occupation:</label>
+                  <input formControlName="occupation" placeholder="Occupation" name="occupation" class="form-control" id="occupation">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label for="title">Title:</label>
+                  <input formControlName="title" placeholder="Title" name="title" class="form-control" id="title">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                 <label for="name">Allocation Date:</label>
+                <input formControlName="allocationDate" placeholder="Allocation Date" name="allocationDate" class="form-control" id="allocationDate">
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label for="emerPhoneCode">Emergency Phonefield Code:</label>
+                  <input formControlName="emerPhoneCode" placeholder="Emergency Phonefield Code" name="emerPhoneCode" class="form-control" id="emerPhoneCode">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label for="emerPhoneNo">Emergency Phone No:</label>
+                  <input formControlName="emerPhoneNo" placeholder="Emergency Phone No" name="emerPhoneNo" class="form-control" id="emerPhoneNo">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                 <label for="emerPhoneExt">Emergency Phone Ext:</label>
+                <input formControlName="emerPhoneExt" placeholder="Emergency Phone Ext" name="emerPhoneExt" class="form-control" id="emerPhoneExt">
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label for="mainBranchField">Main Branch Field:</label>
+                  <input formControlName="mainBranchField" placeholder="Main Branch Field" name="mainBranchField" class="form-control" id="mainBranchField">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label for="guaranteeFlag">Guarantee Flag:</label>
+                  <input formControlName="guaranteeFlag" placeholder="Guarantee Flag" name="guaranteeFlag" class="form-control" id="guaranteeFlag">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                 <label for="assuranceType">Assurance Type:</label>
+                <input formControlName="assuranceType" placeholder="Assurance Type" name="assuranceType" class="form-control" id="assuranceType">
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label for="nationaId">National Id:</label>
+                  <input formControlName="nationaId" placeholder="National Id" name="nationaId" class="form-control" id="nationaId">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label for="customerGroup">Customer Group:</label>
+                  <input formControlName="customerGroup" placeholder="Guarantee Flag" name="customerGroup" class="form-control" id="customerGroup">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                 <label for="custodianNationalId">Custodian National Id:</label>
+                <input formControlName="custodianNationalId" placeholder="Custodian National Id" name="custodianNationalId" class="form-control" id="custodianNationalId">
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label for="smsOTPNo">SMS OTP No:</label>
+                  <input formControlName="smsOTPNo" placeholder="SMS OTP No" name="smsOTPNo" class="form-control" id="smsOTPNo">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label for="motherName">Mother Name:</label>
+                  <input formControlName="motherName" placeholder="Guarantee Flag" name="motherName" class="form-control" id="motherName">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                 <label for="parentName">Parent Name:</label>
+                <input formControlName="parentName" placeholder="Parent Name" name="parentName" class="form-control" id="parentName">
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label for="parentId">Parent Id:</label>
+                  <input formControlName="parentId" placeholder="Parent Id" name="parentId" class="form-control" id="parentId">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label for="parentDesc">Parent Description:</label>
+                  <input formControlName="parentDesc" placeholder="Parent Description" name="parentDesc" class="form-control" id="parentDesc">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                 <label for="channelCode">Channel Code:</label>
+                <input formControlName="channelCode" placeholder="Channel Code" name="channelCode" class="form-control" id="channelCode">
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label for="picturePath">Picture File Path :</label>
+                  <input formControlName="picturePath" placeholder="Picture File Path" name="picturePath" class="form-control" id="picturePath">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label for="custodian">Custodian:</label>
+                  <input formControlName="custodian" placeholder="Parent Description" name="custodian" class="form-control" id="custodian">
+                </div>
+              </div>
+            </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+                 <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                      Address Details 
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+
+                  
+
+                  <div class="card-body">
+                    <div formGroupName="addressData">
+                    
+
+               <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                 <label for="address1">Address 1:</label>
+                <input formControlName="address1" placeholder="Address 1" name="address1" class="form-control" id="address1">
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label for="address2">Address 2:</label>
+                  <input formControlName="address2" placeholder="Address 2" name="address2" class="form-control" id="address2">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label for="address1">Address 3:</label>
+                  <input formControlName="address3" placeholder="Address 3" name="address3" class="form-control" id="address3">
+                </div>
+              </div>
+            </div> 
+
+            <div class="row">
+              <div class="col-md-3 pr-1">
+                <div class="form-group">
+                 <label for="city">City:</label>
+                <input formControlName="city" placeholder="City" name="city" class="form-control" id="city">
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                <div class="form-group">
+                  <label for="cityCode">City code:</label>
+                  <input formControlName="cityCode" placeholder="City code" name="cityCode" class="form-control" id="cityCode">
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                <div class="form-group">
+                  <label for="town">Town:</label>
+                  <input formControlName="town" placeholder="Town" name="town" class="form-control" id="town">
+                </div>
+              </div>
+              <div class="col-md-3 pl-1">
+                <div class="form-group">
+                  <label for="townCode">Town code:</label>
+                  <input formControlName="townCode" placeholder="Town code" name="townCode" class="form-control" id="townCode">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3 pr-1">
+                <div class="form-group">
+                 <label for="state">State:</label>
+                <input formControlName="state" placeholder="State" name="state" class="form-control" id="state">
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                <div class="form-group">
+                  <label for="stateCode">State code:</label>
+                  <input formControlName="stateCode" placeholder="City code" name="stateCode" class="form-control" id="stateCode">
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                <div class="form-group">
+                  <label for="country">Country:</label>
+                  <input formControlName="country" placeholder="Town" name="Country" class="form-control" id="country">
+                </div>
+              </div>
+              <div class="col-md-3 pl-1">
+                <div class="form-group">
+                  <label for="zipCode">Zip Code:</label>
+                  <input formControlName="zipCode" placeholder="Zip Code" name="zipCode" class="form-control" id="zipCode">
+                </div>
+              </div>
+            </div>
+             <div class="row">
+              <button class="btn btn-success" type="button" (click)="addAddress()">AddAddress</button>
+             </div>
+             
+                
+            </div>  
+            <div>
+                <div *ngFor="let a of addresses; let i=index" >
+              <div class="row">
+                <div class="col-md-3 pr-1">
+                <div class="form-group">
+                 <label for="state">Address1:</label>
+                <input  placeholder="State" name="state" class="form-control" value={{a.address1}}>
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                <div class="form-group">
+                  <label for="stateCode">Address2:</label>
+                  <input placeholder="City code" name="stateCode" class="form-control" value={{a.address2}}>
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                <div class="form-group">
+                  <label for="country">Address3:</label>
+                  <input  placeholder="Town" name="Country" class="form-control" value={{a.address3}}>
+                </div>
+              </div>
+              <div class="col-md-3 pl-1">
+                <div class="form-group">
+                  <button class="btn btn-success" type="button" (click)="editAddress(i)">EditAddress</button>
+                </div>
+              </div>
+                
+                
+            </div>
+
+          
+
+      </div>
+             </div>
+
+                   
+          
+                 
+
+                   
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                      Banking Details 
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body">
+
+                    <div class="row">
+                      <div class="col-md-4 pr-1">
+                        <div class="form-group">
+                         <label for="bankingCustomerNo">Banking Customer No:</label>
+                        <input  placeholder="Banking Customer No" name="bankingCustomerNo" class="form-control" id="bankingCustomerNo" formControlName="bankingCustomerNo">
+                        </div>
+                      </div>
+                      <div class="col-md-4 px-1">
+                        <div class="form-group">
+                          <label for="customerNo">Customer No:</label>
+                          <input  placeholder="Customer No" name="customerNo" class="form-control" id="customerNo" formControName="customerNo">
+                        </div>
+                      </div>
+                      <div class="col-md-4 pl-1">
+                        <div class="form-group">
+                          <label for="oneClickId">One Click Id:</label>
+                          <input formControlName="oneClickId" placeholder="One Click Id" name="oneClickId" class="form-control" id="oneClickId">
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-4 pr-1">
+                        <div class="form-group">
+                         <label for="kycStatus">KYC Status:</label>
+                        <input  placeholder="KYC Status" name="kycStatus" class="form-control" id="kycStatus" formControlName="kycStatus">
+                        </div>
+                      </div>
+                      <div class="col-md-4 px-1">
+                        <div class="form-group">
+                          <label for="panNumber">PAN Number:</label>
+                          <input  placeholder="PAN Number" name="panNumber" class="form-control" id="panNumber" formControName="panNumber">
+                        </div>
+                      </div>
+                      <div class="col-md-4 pl-1">
+                        <div class="form-group">
+                          <label for="isOTPCustomer">Is OTP Customer:</label>
+                          <div class="form-check form-check-radio">
+                            <label class="form-check-label">
+                                <input formControlName="isOTPCustomer" class="form-check-input" type="radio" name="isOTPCustomer" id="isOTPCustomer" value="Yes" checked>
+                                <span class="form-check-sign"></span>
+                                Yes
+                            </label>
+                            <label class="form-check-label">
+                                <input formControlName="isOTPCustomer" class="form-check-input" type="radio" name="isOTPCustomer" id="isOTPCustomer" value="No" checked>
+                                <span class="form-check-sign"></span>
+                                No
+                            </label>
+                        </div>
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-4 pr-1">
+                        <div class="form-group">
+                         <label for="aadharNo">Aadhar No:</label>
+                        <input  placeholder="Aadhar No" name="aadharNo" class="form-control" id="aadharNo" formControlName="aadharNo">
+                        </div>
+                      </div>
+                      <div class="col-md-4 px-1">
+                        <div class="form-group">
+                          <label for="passportId">Passport Id:</label>
+                          <input  placeholder="Passport Id" name="passportId" class="form-control" id="passportId" formControName="passportId">
+                        </div>
+                      </div>
+                      <div class="col-md-4 pl-1">
+                        <div class="form-group">
+                          <label for="drivingLicence">Driving Licence:</label>
+                          <input formControlName="drivingLicence" placeholder="Driving Licence" name="drivingLicence" class="form-control" id="drivingLicence">
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-4 pr-1">
+                        <div class="form-group">
+                         <label for="votersId">Voters Id:</label>
+                        <input  placeholder="Voters Id" name="votersId" class="form-control" id="votersId" formControlName="votersId">
+                        </div>
+                      </div>
+                      <div class="col-md-4 px-1">
+                        <div class="form-group">
+                          <label for="jobCard">Job Card:</label>
+                          <input formControlName="jobCard" placeholder="Job Card" name="jobCard" class="form-control" id="jobCard">
+                        </div>
+                      </div>
+                      <div class="col-md-4 pl-1">
+                        <div class="form-group">
+                          <label for="customerType">Customer Type:</label>
+                          <input formControlName="customerType" placeholder="Job Card" name="customerType" class="form-control" id="customerType">
+                        </div>
+                      </div>
+                  </div>
+
+                   
+
+                  
+
+                   
+                  </div>
+                </div>
+              </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <button class="btn btn-success" type="submit">Submit</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
