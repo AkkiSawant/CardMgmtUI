@@ -19,7 +19,7 @@ export class ListUserComponent implements OnInit {
     this.userService.getUsers()
       .subscribe( data => {
         if(data==null){
-          this.users=[]
+          this.users=[{"banking_customer_no":"121","id":1,"customer_no":"2323","one_click_id":"66","name":"James","mid_name":"White","surname":"Gosling"}]
         }else{
           this.users = data;
         }
@@ -29,7 +29,7 @@ export class ListUserComponent implements OnInit {
 
 
   deleteUser(user: User): void {
-    this.userService.deleteUser(user.aadharNo)
+    this.userService.deleteUser(user.banking_customer_no)
       .subscribe( data => {
         this.users = this.users.filter(u => u !== user);
       })
@@ -37,7 +37,7 @@ export class ListUserComponent implements OnInit {
 
   editUser(user: User): void {
     localStorage.removeItem("editUserId");
-    localStorage.setItem("editUserId", user.birthCity.toString());
+    localStorage.setItem("editUserId", user.id.toString());
     this.router.navigate(['edit-user']);
   };
 

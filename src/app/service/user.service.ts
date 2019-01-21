@@ -5,7 +5,7 @@ import {User} from "../model/user.model";
 @Injectable()
 export class UserService {
   constructor(private http: HttpClient) { }
-  baseUrl: string = "http://localhost:8080/mycardsolutions/createCustomer";
+  baseUrl: string = "http://localhost:8080/mycardsolutions/CreateCustomer";
 
   getUsers() {
     /* let fakeUsers = [{id: 1, firstName: 'Dhiraj', lastName: 'Ray', email: 'dhiraj@gmail.com'},
