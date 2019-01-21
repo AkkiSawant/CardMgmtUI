@@ -1,32 +1,41 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http"
+import { AppRoutingModule } from './app.routing';
+import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import {routing} from "./app.routing";
-import {AuthenticationService} from "./service/auth.service";
-import {ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
-import { AddUserComponent } from './add-user/add-user.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
-import {ListUserComponent} from "./list-user/list-user.component";
-import {UserService} from "./service/user.service";
+
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+
+import {LoginComponent} from './login/login.component';
+
+
 
 @NgModule({
+  imports: [
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpModule,
+    HttpClientModule,
+    ComponentsModule,
+    RouterModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgbModule.forRoot()
+  ],
   declarations: [
     AppComponent,
-    LoginComponent,
-    ListUserComponent,
-    AddUserComponent,
-    EditUserComponent
+    AdminLayoutComponent,
+    LoginComponent
+
   ],
-  imports: [
-    BrowserModule,
-    routing,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
-  providers: [AuthenticationService, UserService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
