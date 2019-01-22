@@ -5,6 +5,10 @@ import {first} from "rxjs/operators";
 import {Router} from "@angular/router";
 import { ToastrService } from 'ngx-toastr';
 import {User} from "../model/user.model";
+import {Customer} from "../model/customer.model";
+import {HttpResponse} from "../model/http-response.model";
+
+
 
 @Component({
   selector: 'app-add-user',
@@ -15,6 +19,7 @@ export class AddUserComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,private router: Router, private userService: UserService,private toastr: ToastrService) { }
 
+  res: HttpResponse;
   addForm: FormGroup;
   //addressForm:FormGroup;
 
@@ -24,6 +29,7 @@ export class AddUserComponent implements OnInit {
   address:any;
 
   userObject:User; 
+  customer:Customer; 
 
   ngOnInit() {
 
@@ -39,9 +45,11 @@ export class AddUserComponent implements OnInit {
       drivingLicence:[],
       votersId:[],
       jobCard:[],
+      customerType:[],
       name: ['', Validators.required],
       mid_name:[],
       surname:[],
+      birthDate:[],
       fatherName:[],
       motherMaidenName:[],
       gender:[],
@@ -111,7 +119,7 @@ export class AddUserComponent implements OnInit {
 
   onSubmit() {
     this.userObject=new User(this.addForm.value);
-    this.userObject.addresses=this.addresses;
+//    this.userObject.addresses=this.addresses;
     console.log(JSON.stringify(this.userObject));
     this.userService.createUser(this.addForm.value)
       .subscribe( data => {
@@ -137,6 +145,36 @@ export class AddUserComponent implements OnInit {
         console.log(data);
       });
   }
+
+    
+    //send data to create customer REST API
+    onDataSubmit() : HttpResponse{
+        console.log("add-user.component.OnDataSubmit()");
+        
+        this.customer = new Customer(this.addForm.value);
+        this.userObject = new User();
+        this.userObject.customer = this.customer;
+        
+        //call create user REST API with User Object
+        this.userService.createUser(this.userObject)
+                        .subscribe(data => {
+            
+            this.res = new HttpResponse();
+            //set HttpResponse object with response from REST API
+            for(let key in data){
+                this.res.result = data[key].result;
+                this.res.code = data[key].returnCode;
+                this.res.description = data[key].returnDescription;
+            }
+            
+            console.log("Result :"+this.res.result);
+            console.log("Code :"+this.res.code);
+            console.log("Description :"+this.res.description);
+            
+            alert("Result : "+this.res.result+"\n"+"Code : "+this.res.code+"\n"+"Description : "+this.res.description)
+        })
+        return this.res;
+    }
 
   addAddress(){
 

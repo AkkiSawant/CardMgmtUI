@@ -29,7 +29,7 @@ export class ListUserComponent implements OnInit {
 
 
   deleteUser(user: User): void {
-    this.userService.deleteUser(user.aadharNo)
+    this.userService.deleteUser(user.customer.aadharNo)
       .subscribe( data => {
         this.users = this.users.filter(u => u !== user);
       })
@@ -37,7 +37,7 @@ export class ListUserComponent implements OnInit {
 
   editUser(user: User): void {
     localStorage.removeItem("editUserId");
-    localStorage.setItem("editUserId", user.birthCity.toString());
+    localStorage.setItem("editUserId", user.customer.birthCity.toString());
     this.router.navigate(['edit-user']);
   };
 

@@ -5,7 +5,9 @@ import {User} from "../model/user.model";
 @Injectable()
 export class UserService {
   constructor(private http: HttpClient) { }
-  baseUrl: string = "http://localhost:8080/mycardsolutions/createCustomer";
+  baseUrl: string = "http://localhost:8080/mycardsolutions/";
+    //resource name
+  createCustomer:string = "CreateCustomer";
 
   getUsers() {
     /* let fakeUsers = [{id: 1, firstName: 'Dhiraj', lastName: 'Ray', email: 'dhiraj@gmail.com'},
@@ -21,9 +23,8 @@ export class UserService {
     return this.http.get<User>(this.baseUrl + '/' + id);
   }
 
-  createUser(user: User) {
-    console.log(user);
-    return this.http.post(this.baseUrl, user);
+  createUser(user: User) { 
+    return this.http.post(this.baseUrl+this.createCustomer, user);
   }
 
   updateUser(user: User) {

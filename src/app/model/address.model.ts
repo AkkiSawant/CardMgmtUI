@@ -1,3 +1,9 @@
+
+/**
+*kemblekaran
+*Address object for holding multiple objects of a customer.This object will have a has-a relationship with
+*Customer. (HAS-A Relationship with Customer)
+**/
 export class Address{
 	addressIdx:string;
         addressType:string;
